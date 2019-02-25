@@ -42,7 +42,7 @@ public class Fragment1 extends BaseFragment {
     }
 
     void onFragment1NextClick(View view) {
-        mNavController.navigate(R.id.fragment2);
+        mNavController.navigate(R.id.action_fragment1_to_fragment2);
     }
 
 

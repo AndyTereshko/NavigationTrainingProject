@@ -8,7 +8,11 @@
         android:id="@+id/fragment1"
         android:name="com.example.trainingproject.ui.Fragment1"
         android:label="fragment1"
-        tools:layout="@layout/fragment1" />
+        tools:layout="@layout/fragment1" >
+        <action
+            android:id="@+id/action_fragment1_to_fragment2"
+            app:destination="@id/fragment2" />
+    </fragment>
     <fragment
         android:id="@+id/fragment2"
         android:name="com.example.trainingproject.ui.Fragment2"
