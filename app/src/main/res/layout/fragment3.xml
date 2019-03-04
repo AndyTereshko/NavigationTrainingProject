@@ -19,28 +19,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <Button
-        android:id="@+id/buttonBack"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="32dp"
-        android:onClick="onFragment3BackClick"
-        android:text="@string/backButtonText"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toStartOf="@id/buttonNext"
-        app:layout_constraintStart_toStartOf="@id/fragmentName"
-        app:layout_constraintTop_toBottomOf="@id/fragmentName" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentName"
+        >
 
-    <Button
-        android:id="@+id/buttonNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="32dp"
-        android:onClick="onFragment3NextClick"
-        android:text="@string/nextButtonText"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="@id/fragmentName"
-        app:layout_constraintStart_toEndOf="@id/buttonBack"
-        app:layout_constraintTop_toBottomOf="@id/fragmentName" />
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

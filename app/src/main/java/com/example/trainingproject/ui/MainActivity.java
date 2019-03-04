@@ -4,15 +4,12 @@ import android.os.Bundle;
 
 import com.example.trainingproject.R;
 import com.example.trainingproject.presenter.MainActivityPresenter;
-import com.example.trainingproject.ui.base.BaseFragment;
-import com.example.trainingproject.util.Log;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.trainingproject.util.log.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.RecyclerView;
+import butterknife.BindView;
 
 import android.view.View;
 
@@ -21,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     Fragment1 fragment1;
     Fragment2 fragment2;
     Fragment3 fragment3;
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onFragment1BackClick(View view) {
         Log.logToDebugNavigation("onFragment1BackClick");
-        fragment1.onFragment1BackClick(view);
+//        fragment1.onFragment1BackClick(view);
     }
 
     public void onFragment1NextClick(View view) {
@@ -59,16 +58,6 @@ public class MainActivity extends AppCompatActivity {
     public void onFragment2NextClick(View view) {
         Log.logToDebugNavigation("onFragment2NextClick");
         fragment2.onFragment2NextClick(view);
-    }
-
-    public void onFragment3BackClick(View view) {
-        Log.logToDebugNavigation("onFragment3BackClick");
-        fragment3.onFragment3BackClick(view);
-    }
-
-    public void onFragment3NextClick(View view) {
-        Log.logToDebugNavigation("onFragment3NextClick");
-        fragment3.onFragment3NextClick(view);
     }
 
 

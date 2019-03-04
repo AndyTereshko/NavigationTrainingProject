@@ -1,4 +1,4 @@
-package com.example.trainingproject.util;
+package com.example.trainingproject.model.factory;
 
 import com.example.trainingproject.ui.base.BaseFragment;
 import androidx.navigation.NavController;

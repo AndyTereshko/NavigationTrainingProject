@@ -7,14 +7,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.trainingproject.R;
+import com.example.trainingproject.presenter.MainActivityPresenter;
 import com.example.trainingproject.ui.base.BaseFragment;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import butterknife.BindView;
 
 
 public class Fragment3 extends BaseFragment {
 
     private NavController mNavController;
+    private MainActivityPresenter mainActivityPresenter;
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
 
     public Fragment3() {
         // Required empty public constructor
@@ -29,19 +37,18 @@ public class Fragment3 extends BaseFragment {
         mNavController = navController;
     }
 
-    void onFragment3BackClick(View view) {
-        mNavController.navigate(R.id.fragment2);
-    }
-
-    void onFragment3NextClick(View view) {
-    }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment3, container, false);
+        View view = inflater.inflate(R.layout.fragment3, container, false);
+        recyclerView = view.findViewById(R.id.recyclerView);
+        mainActivityPresenter = MainActivityPresenter.getInstance();
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(mainActivityPresenter.initDataForRecyler());
+        return view;
     }
 
 
