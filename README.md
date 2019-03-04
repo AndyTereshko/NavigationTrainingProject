@@ -1,4 +1,4 @@
-# NavigationTrainingProject
+# TrainingProject
 
 Training project to get hands on Navigation Architecture Component and Paging Library.
 
